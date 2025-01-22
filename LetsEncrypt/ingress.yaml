@@ -1,0 +1,16 @@
+spec:
+  tls:
+  - hosts:
+    - "es.antarcticrover.org"
+    secretName: my-app-tls
+  rules:
+  - host: "es.antarcticrover.org"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-app-service
+            port:
+              number: 80

@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: elastic-cert
+  namespace: elastic
+spec:
+  secretName: my-app-tls  # Secret name referenced in the Ingress
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: es.arcticrover.org  # Replace with your domain name
+  dnsNames:
+  - es.arcticrover.org  # Replace with your domain name
